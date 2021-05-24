@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "XP OOBE",
+  "name": "Recreation of the Windows XP OOBE",
   "icons": [
     {
       "src": "favicon.ico",
