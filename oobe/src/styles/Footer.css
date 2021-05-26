@@ -1,0 +1,14 @@
+#footer {
+    background-image: url("../assets/newtop1.jpg");
+
+    height: 50px;
+
+    /* margin: 0; */
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+}
+
