@@ -1,13 +1,35 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.title-text {
+  font-family: "Franklin Gothic Book", Arial;
+  font-weight: bolder;
+  font-size: 36px;
+
+  margin: 0;
+
+  color: white;
+
+  text-shadow: 3px 3px 3px #1F48A2;
+  font-smooth:never;
+}
+
+.body-text {
+  font-family: "Franklin Gothic Book", Arial;
+
+  /* margin: 0; */
+
+  color: white;
+
+  font-size: 14px;
+}
+.main-content {
+  background-image: url("./assets/wpaback.jpg");
+
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+
 }

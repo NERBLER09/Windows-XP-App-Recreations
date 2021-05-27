@@ -1,6 +1,9 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
+import back from "./assets/wpaback.jpg"
+import MainPage from "./pages/MainPage";
+
 function App() {
   return (
     <div className="oobe window">
@@ -13,8 +16,11 @@ function App() {
         </div>
       </div>
 
-      <div className="main-content">
+      <div className="main">
         <Header/>
+          <div className="main-content">
+            <MainPage/>
+          </div>
         <Footer/>
       </div>
     </div>
