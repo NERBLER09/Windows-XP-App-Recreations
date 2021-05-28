@@ -24,6 +24,19 @@ body {
 
   font-size: 14px;
 }
+
+.header-text {
+  font-family: "Franklin Gothic Book", Arial;
+
+  /* margin: 0; */
+
+  color: white;
+
+  font-size: 22px;
+
+  font-weight: bold;
+}
+
 .main-content {
   background-image: url("./assets/wpaback.jpg");
 

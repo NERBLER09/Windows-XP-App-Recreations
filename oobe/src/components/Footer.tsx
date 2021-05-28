@@ -1,11 +1,10 @@
 import { FC } from "react";
-import { useCurrentState } from "../hooks/useCurrentState";
+import { getCurrentState } from "../hooks/useCurrentState";
 import "../styles/Footer.css"
 import NavButtons from "./NavButton";
 
 const Footer: FC = () => {
-    const {button}: any = useCurrentState("home")
-
+    let {button}: any = getCurrentState(window.location.pathname)
 
     return (
         <div id="footer">
@@ -13,7 +12,7 @@ const Footer: FC = () => {
                 <>
                     <NavButtons type={button.type} 
                     text={button.text} location={button.location} 
-                    buttonType={button.buttonType}/>
+                    buttonType={button.buttonType} backLocation={button?.backLocation}/>
                 </>
             ))}
         </div>

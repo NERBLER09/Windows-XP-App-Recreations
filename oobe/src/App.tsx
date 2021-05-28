@@ -1,8 +1,10 @@
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
-import back from "./assets/wpaback.jpg"
 import MainPage from "./pages/MainPage";
+import Updates from './pages/Updates';
 
 function App() {
   return (
@@ -19,7 +21,10 @@ function App() {
       <div className="main">
         <Header/>
           <div className="main-content">
-            <MainPage/>
+            <Router>
+                <Route path="/" exact component={MainPage}/>
+                <Route path="/updates" component={Updates}/>
+            </Router>
           </div>
         <Footer/>
       </div>

@@ -1,0 +1,22 @@
+#automatic-updates-page {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    padding-top: 1rem;
+}
+
+#options {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    padding-top: 1rem;
+}
+.update-option-box {
+    display: flex;
+    align-items: center;
+}
+.update-option-text {
+    margin-left: 1rem;
+}
+.update-select {
+    display: flex;
+    align-items: center;
+}

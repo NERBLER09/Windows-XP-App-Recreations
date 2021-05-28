@@ -1,15 +1,32 @@
-export const useCurrentState = (progress: string) => {
+export const getCurrentState = (progress: string) => {
     let button: any
 
     switch(progress) {
-        case "home":
+        case "/":
             button = [
             {
                 type: "next",
                 text: "Next",
-                location: "/",
-                buttonType: "forward"
+                location: "/updates",
+                buttonType: "forward",
             }]
+
+            break
+        case "/updates":
+            button = [
+                {
+                    type: "back",
+                    text: "Back",
+                    backLocation: "/",
+                    buttonType: "back",
+                },
+                {
+                    type: "next",
+                    text: "Next",
+                    location: "/updates",
+                    buttonType: "forward",
+                }
+            ]
     }
     return {button}
 }

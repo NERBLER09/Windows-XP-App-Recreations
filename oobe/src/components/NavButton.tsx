@@ -10,15 +10,24 @@ export interface NavButtonsProps {
     type: string,
     text: string,
     location: string,
-    buttonType: string
+    buttonType: string,
+    backLocation?: any
 }
  
-const NavButtons: FC<NavButtonsProps> = ({text, type, buttonType, location}) => {
+const NavButtons: FC<NavButtonsProps> = ({text, type, buttonType, location, backLocation}) => {
+    const navToNextScreen = (location: string) => {
+        window.location.pathname = location
+    }
+
+    const goBack = () => {
+        window.location.pathname = backLocation
+    }
+    
     return (
         <>
             {buttonType === "forward" && 
                 <div className={type} >
-                    <div id="nav-item">
+                    <div id="nav-item" onClick={() => navToNextScreen(location)}>
                         <p className="nav-text">{text}</p>
                         <div id="next-button" className="nav-img">
                             <img src={next} alt="" />
@@ -28,7 +37,7 @@ const NavButtons: FC<NavButtonsProps> = ({text, type, buttonType, location}) => 
             }
             {buttonType === "back" && 
                 <div className={type} >
-                     <div id="nav-item">
+                     <div id="nav-item" onClick={() => goBack()}>
                         <div id="back-button" className="nav-img">
                             <img src={back} alt="" />
                         </div>
