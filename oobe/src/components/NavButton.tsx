@@ -47,7 +47,7 @@ const NavButtons: FC<NavButtonsProps> = ({text, type, buttonType, location, back
             }
             {buttonType === "skip" && 
                 <div className={type} >
-                    <div id="nav-item">
+                    <div id="nav-item" onClick={() => navToNextScreen(location)}>
                         <p className="nav-text">{text}</p>
                         <div id="skip-button" className="nav-img">
                             <img src={skip} alt="" />

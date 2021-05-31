@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import InternetConnectivity from './pages/InternetConnectivity';
 
 import MainPage from "./pages/MainPage";
 import Updates from './pages/Updates';
@@ -24,6 +25,7 @@ function App() {
             <Router>
                 <Route path="/" exact component={MainPage}/>
                 <Route path="/updates" component={Updates}/>
+                <Route path="/connectivity" component={InternetConnectivity}/>
             </Router>
           </div>
         <Footer/>

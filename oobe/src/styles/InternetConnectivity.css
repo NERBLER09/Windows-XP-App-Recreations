@@ -1,0 +1,10 @@
+.connecting-img {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#connecting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
