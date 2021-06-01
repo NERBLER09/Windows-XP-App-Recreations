@@ -7,12 +7,12 @@ import "../styles/InternetConnectivity.css"
 const InternetConnectivity: FC = () => {
     useEffect(() => {
         setTimeout(() => {
-            window.location.pathname = "/connectivity"
+            window.location.pathname = "/connectToInternet"
         }, 6000);
     }, [])
     
     return (
-        <div id="internet-connectivity">
+        <div id="internet-connectivity" className="page-body">
             <div id="main-text">
                 <h1 className="title-text">Checking your Internet connectivity</h1>
                 <p className="body-text">

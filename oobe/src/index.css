@@ -46,3 +46,8 @@ body {
   width: 100%;
 
 }
+.page-body {
+  margin-left: 4rem;
+  margin-right: 4rem;
+  padding-top: 1rem;
+}

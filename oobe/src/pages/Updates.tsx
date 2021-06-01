@@ -6,7 +6,7 @@ import deny from "../assets/redshd.gif"
 
 const Updates: FC = () => {
     return (
-        <div id="automatic-updates-page">
+        <div id="automatic-updates-page" className="page-body">
             <div id="main-text">
                 <h1 className="title-text">Help protect your PC</h1>
                 <p className="body-text">
