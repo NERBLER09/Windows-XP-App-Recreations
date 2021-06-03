@@ -16,7 +16,14 @@ export interface NavButtonsProps {
  
 const NavButtons: FC<NavButtonsProps> = ({text, type, buttonType, location, backLocation}) => {
     const navToNextScreen = (location: string) => {
-        window.location.pathname = location
+        // Closes the tab once done the oobe
+        if(window.location.pathname === "/finish") {
+            window.close()
+        }
+        // Navigates to the next screen of the oobe
+        else {
+            window.location.pathname = location
+        }
     }
 
     const goBack = () => {

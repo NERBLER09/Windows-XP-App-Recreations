@@ -83,18 +83,25 @@ export const getCurrentState = (progress: string) => {
                     buttonType: "back",
                 },
                 {
-                    type: "skip",
-                    text: "Skip",
-                    location: "/userAccounts",
-                    buttonType: "skip",
-                },
-                {
                     type: "next",
                     text: "Next",
-                    location: "/userAccounts",
+                    location: "/finish",
                     buttonType: "forward",
                 }
             ]
+
+            break
+        case "/finish":
+            button = [
+                {
+                    type: "next",
+                    text: "Finish",
+                    location: "/finish",
+                    buttonType: "forward",
+                }
+            ]
+
+            break
     }
     return {button}
 }

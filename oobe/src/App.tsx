@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ConnectToInternet from './pages/ConnectToInternet';
+import Finish from './pages/Finish';
 import InternetConnectivity from './pages/InternetConnectivity';
 
 import MainPage from "./pages/MainPage";
@@ -30,6 +31,7 @@ function App() {
                 <Route path="/connectivity" component={InternetConnectivity}/>
                 <Route path="/connectToInternet" component={ConnectToInternet}/>
                 <Route path="/userAccounts" component={UserAccounts}/>
+                <Route path="/finish" component={Finish}/>
             </Router>
           </div>
         <Footer/>
