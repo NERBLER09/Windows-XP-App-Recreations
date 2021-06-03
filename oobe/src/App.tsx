@@ -7,6 +7,7 @@ import InternetConnectivity from './pages/InternetConnectivity';
 
 import MainPage from "./pages/MainPage";
 import Updates from './pages/Updates';
+import UserAccounts from './pages/UserAccounts';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/updates" component={Updates}/>
                 <Route path="/connectivity" component={InternetConnectivity}/>
                 <Route path="/connectToInternet" component={ConnectToInternet}/>
+                <Route path="/userAccounts" component={UserAccounts}/>
             </Router>
           </div>
         <Footer/>

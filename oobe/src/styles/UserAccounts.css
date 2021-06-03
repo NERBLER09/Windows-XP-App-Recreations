@@ -1,0 +1,22 @@
+#username-inputs {
+    margin-left: 1rem;
+}
+.user-input {
+    display: flex;
+    align-items: center;
+}
+.username-text-input {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    margin-right: 25%;
+}
+
+.user-input > p {
+    width: 100px;
+}
+
+.username-text-input > input {
+    width: 150px;
+}
