@@ -1,10 +1,13 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 
 function createWindow () {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 800,
-    height: 600,
+    height: 610,
+    minHeight: 610,
+    minWidth: 800,
+    frame: false,
     webPreferences: {
       nodeIntegration: true
     }
@@ -15,6 +18,18 @@ function createWindow () {
 
   // Open the DevTools.
   win.webContents.openDevTools()
+
+  ipcMain.on("maximize", () => {
+    if(win.isMaximized()) {
+      win.restore()
+    }
+    else {
+      win.maximize()
+    }
+  })
+  ipcMain.on("minimize", () => {
+    win.minimize()
+  })
 }
 
 // This method will be called when Electron has finished

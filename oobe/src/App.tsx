@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { closeWindow, maximizeWindow, minimizeWindow } from "./ts/windowControls"
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -13,12 +14,12 @@ import UserAccounts from './pages/UserAccounts';
 function App() {
   return (
     <div className="oobe window">
-      <div className="title-bar">
+      <div className="title-bar" id="window-title-bar">
         <div className="title-bar-text">Windows XP OOBE Recreation</div>
         <div className="title-bar-controls">
-          <button aria-label="Minimize"></button>
-          <button aria-label="Maximize"></button>
-          <button aria-label="Close"></button>
+          <button aria-label="Minimize" onClick={minimizeWindow} title="Minimize"></button>
+          <button aria-label="Maximize" onClick={maximizeWindow} title="Maximize" id="maximizeButton"></button>
+          <button aria-label="Close" onClick={closeWindow} title="Close"></button>
         </div>
       </div>
 
