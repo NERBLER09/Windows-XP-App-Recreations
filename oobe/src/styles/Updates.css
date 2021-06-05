@@ -1,11 +1,11 @@
 #options {
-    margin-left: 4rem;
-    margin-right: 4rem;
-    padding-top: 1rem;
+    margin-top: 2rem;
 }
 .update-option-box {
     display: flex;
     align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 .update-option-text {
     margin-left: 1rem;

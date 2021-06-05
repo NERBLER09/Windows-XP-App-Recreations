@@ -3,8 +3,8 @@ import "../styles/MainPage.css"
 
 const MainPage: FC = () => {
     return (
-        <div id="main-page" className="page-body">
-            <div id="main-text">
+        <div id="main-page" >
+            <div id="main-text" className="page-body">
                 <h1 className="title-text">Welcome To Microsoft Windows</h1>
                 <p className="body-text">Thank you for purchasing Microsoft Windows XP.</p>
                 <p className="body-text">Let's spend a few minutes setting up your computer.</p>

@@ -5,6 +5,7 @@ body {
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
+  height: fit-content;
 }
 
 .title-text {
@@ -44,13 +45,13 @@ body {
 
 .main-content {
   background-image: url("./assets/wpaback.jpg");
-
-  height: 80vh;
   background-repeat: no-repeat;
   background-size: cover;
+  height: calc(100% - 125px);
   width: 100%;
 
 }
+
 .page-body {
   margin-left: 4rem;
   margin-right: 4rem;
@@ -62,5 +63,6 @@ body {
 }
 #intro-img {
   width: 100%;
-  height: 95%;
+  height: calc(100% - 35px);
+
 }
