@@ -66,3 +66,7 @@ body {
   height: calc(100% - 35px);
 
 }
+.title-bar-favicon {
+  width: 16px;
+  height: 16px;
+}

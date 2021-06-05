@@ -13,6 +13,8 @@ import Updates from './pages/Updates';
 import UserAccounts from './pages/UserAccounts';
 import Intro from './pages/Intro';
 
+import favicon from "./assets/favicon.jpg"
+
 function App() {
   const [showIntro, setShowIntro] = useState(true)
   const [hasIntroRun, setHasIntroRun] = useState(false)
@@ -32,6 +34,7 @@ function App() {
   return (
     <div className="oobe window">
       <div className="title-bar" id="window-title-bar">
+        <img src={favicon} alt="" className="title-bar-favicon"/>
         <div className="title-bar-text">Windows XP OOBE Recreation</div>
         <div className="title-bar-controls">
           <button aria-label="Minimize" onClick={minimizeWindow} title="Minimize"></button>
