@@ -48,18 +48,20 @@ function App() {
 
       {showIntro === false && 
         <div className="main">
-          <Header/>
             <div className="main-content">
               <Router>
-                  <Route path="/" exact component={MainPage}/>
-                  <Route path="/updates" component={Updates}/>
-                  <Route path="/connectivity" component={InternetConnectivity}/>
-                  <Route path="/connectToInternet" component={ConnectToInternet}/>
-                  <Route path="/userAccounts" component={UserAccounts}/>
-                  <Route path="/finish" component={Finish}/>
+                <Header/>
+                <div className="main-content">
+                <Route path="/" exact component={MainPage}/>
+                <Route path="/updates" component={Updates}/>
+                <Route path="/connectivity" component={InternetConnectivity}/>
+                <Route path="/connectToInternet" component={ConnectToInternet}/>
+                <Route path="/userAccounts" component={UserAccounts}/>
+                <Route path="/finish" component={Finish}/>
+                </div>
+                <Footer/>
               </Router>
             </div>
-          <Footer/>
         </div>  
       }
     </div>

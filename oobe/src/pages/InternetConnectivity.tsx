@@ -1,13 +1,17 @@
 import { FC, useEffect } from "react";
+import { useHistory } from "react-router";
 
 import connecting from "../assets/dialup.gif"
 
 import "../styles/InternetConnectivity.css"
 
 const InternetConnectivity: FC = () => {
+    const history = useHistory()
+
     useEffect(() => {
         setTimeout(() => {
-            window.location.pathname = "/connectToInternet"
+            // window.location.pathname = "/connectToInternet"
+            history.push("/connectToInternet")
         }, 6000);
     }, [])
     

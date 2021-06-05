@@ -11,6 +11,7 @@ import nextDown from "../assets/nextdown.jpg"
 import skip from "../assets/skipup.jpg"
 import skipOver from "../assets/skipover.jpg"
 import skipDown from "../assets/skipdown.jpg"
+import { useHistory } from "react-router-dom";
 
 export interface NavButtonsProps {
     type: string,
@@ -30,6 +31,8 @@ const NavButtons: FC<NavButtonsProps> = ({text, type, buttonType, location, back
     const [skipButtonHovered, setSkipButtonHovered]: any = useState(false)
     const [skipButtonClicked, setSkipButtonClicked] = useState(false)
 
+    const history = useHistory()
+
     const navToNextScreen = (location: string) => {
         // Closes the tab once done the oobe
         if(window.location.pathname === "/finish") {
@@ -37,14 +40,29 @@ const NavButtons: FC<NavButtonsProps> = ({text, type, buttonType, location, back
         }
         // Navigates to the next screen of the oobe
         else {
-            window.location.pathname = location
+            // window.location.pathname = location
+            setNextButtonClicked(true)
+            setTimeout(() => {
+                setNextButtonClicked(false)
+                setNextButtonHovered(false)
+                setSkipButtonHovered(false)
+                setSkipButtonClicked(false)
+
+                history.push(location)
+            }, 1000);
         }
     }
 
     const goBack = () => {
-        window.location.pathname = backLocation
+        // window.location.pathname = backLocation
+        setBackButtonClicked(true)
+        setTimeout(() => {
+            setBackButtonClicked(false)
+            setBackButtonHovered(false)
+            history.push(backLocation)
+        }, 1000);
     }
-    
+
     return (
         <>
             {buttonType === "forward" && 
