@@ -1,4 +1,18 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
+const howler = require("howler")
+const {Howl} = howler
+
+const path = require('path');
+
+var sound = new Howl({
+  src: "../src/assets/title.wma",
+  html5: true,
+  format: ["mp3"],
+  volume: 1.0,
+  autoplay: true
+});
+
+sound.play()
 
 function createWindow () {
   // Create the browser window.
