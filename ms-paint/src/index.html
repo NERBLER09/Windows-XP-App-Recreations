@@ -9,16 +9,19 @@
   <body>
     <div class="oobe window">
       <div class="title-bar" id="window-title-bar">
-        <div class="title-bar-text">Windows XP OOBE Recreation</div>
+        <img src="./favicon.png" alt="" class="title-bar-favicon">
+        <div class="title-bar-text">Windows XP Paint Recreation</div>
         <div class="title-bar-controls">
-          <button aria-label="Minimize" title="Minimize"></button>
-          <button aria-label="Maximize"  title="Maximize" id="maximizeButton"></button>
-          <button aria-label="Close" title="Close"></button>
+          <button aria-label="Minimize" title="Minimize" onclick="minimizeWindow()"></button>
+          <button aria-label="Maximize"  title="Maximize" id="maximizeButton" onclick="maximizeWindow()"></button>
+          <button aria-label="Close" title="Close" onclick="closeWindow()"></button>
         </div>
       </div>
       <div id="jspaint-window">
         <iframe src="https://jspaint.app/#local:8029bb9309a06" frameborder="0" id="jspaint"></iframe>
       </div>
     </div>
+    
+    <script src="windowControls.js"></script>
   </body>
 </html>

@@ -9,3 +9,16 @@ body {
   width: 100%;
   height: calc(100vh - 35px);
 }
+.title-bar-text {
+  width: 100%;
+  -webkit-app-region: drag;
+}
+#intro-img {
+  width: 100%;
+  height: calc(100% - 35px);
+
+}
+.title-bar-favicon {
+  width: 16px;
+  height: 16px;
+}
