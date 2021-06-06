@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <title>Hello World!</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://unpkg.com/xp.css" />
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <div class="oobe window">
+      <div class="title-bar" id="window-title-bar">
+        <div class="title-bar-text">Windows XP OOBE Recreation</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" title="Minimize"></button>
+          <button aria-label="Maximize"  title="Maximize" id="maximizeButton"></button>
+          <button aria-label="Close" title="Close"></button>
+        </div>
+      </div>
+      <div id="jspaint-window">
+        <iframe src="https://jspaint.app/#local:8029bb9309a06" frameborder="0" id="jspaint"></iframe>
+      </div>
+    </div>
   </body>
 </html>
