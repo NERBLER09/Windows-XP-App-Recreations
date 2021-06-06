@@ -1,5 +1,7 @@
 // import favicon from ""
 
+import TextInput from "./components/TextInput";
+
 function App() {
   return (
     <div className="notepad window">
@@ -11,6 +13,10 @@ function App() {
           <button aria-label="Maximize" title="Maximize" id="maximizeButton"></button>
           <button aria-label="Close" title="Close"></button>
         </div>
+      </div>
+
+      <div className="main">
+        <TextInput/>
       </div>
     </div>
   );
