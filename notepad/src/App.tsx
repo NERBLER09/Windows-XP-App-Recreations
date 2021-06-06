@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import favicon from ""
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="notepad window">
+      <div className="title-bar" id="window-title-bar">
+        <img src="favicon.ico" alt="" className="title-bar-favicon"/>
+        <div className="title-bar-text">Windows XP Notepad Recreation</div>
+        <div className="title-bar-controls">
+          <button aria-label="Minimize" title="Minimize"></button>
+          <button aria-label="Maximize" title="Maximize" id="maximizeButton"></button>
+          <button aria-label="Close" title="Close"></button>
+        </div>
+      </div>
     </div>
   );
 }
