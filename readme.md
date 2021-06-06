@@ -12,6 +12,7 @@ Clone the repo and `cd ` into it. See `Folders` to see what each folder contains
 
 ## Folders 
 - `oobe` Contains a recreation of the Windows XP OOBE
+- `ms-paint` Contains a recreation of the Windows XP Paint
 
 ## Contributing 
 Generally open an issue (or comment on an issue if there's one already) before starting work on a PR.
