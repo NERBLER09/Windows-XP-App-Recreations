@@ -1,5 +1,6 @@
 // import favicon from ""
 
+import MenuBar from "./components/MenuBar";
 import TextInput from "./components/TextInput";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       </div>
 
       <div className="main">
+        <MenuBar/>
         <TextInput/>
       </div>
     </div>
