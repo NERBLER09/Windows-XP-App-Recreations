@@ -12,9 +12,9 @@
         <img src="./favicon.ico" alt="" class="title-bar-favicon">
         <div class="title-bar-text">Windows XP Paint Recreation</div>
         <div class="title-bar-controls">
-          <button aria-label="Minimize" title="Minimize" onclick="minimizeWindow()"></button>
-          <button aria-label="Maximize"  title="Maximize" id="maximizeButton" onclick="maximizeWindow()"></button>
-          <button aria-label="Close" title="Close" onclick="closeWindow()"></button>
+          <button aria-label="Minimize" title="Minimize" id="minimizeButton"></button>
+          <button aria-label="Maximize"  title="Maximize" id="maximizeButton" ></button>
+          <button aria-label="Close" title="Close" id="closeButton"></button>
         </div>
       </div>
       <div id="jspaint-window">
@@ -22,6 +22,6 @@
       </div>
     </div>
     
-    <script src="windowControls.js"></script>
+    <script defer src="./windowControls.js" type="module"></script>
   </body>
 </html>
