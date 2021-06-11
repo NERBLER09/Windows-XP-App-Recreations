@@ -5,33 +5,38 @@ export const menuBarItemsList = [
             {
                 name: "New",
                 type: "menuItem",
-                shortcut: "Crtl+N"
+                shortcut: "Ctrl+N",
+                action: "createNew"
             },
             {
                 name: "Open",
                 type: "menuItem",
-                shortcut: "Crtl+O"
+                shortcut: "Ctrl+O",
+                action: "openFile",
             },
             {
                 name: "Save",
                 type: "menuItem",
-                shortcut: "Crtl+S"
+                shortcut: "Ctrl+S",
+                action: "saveFile"
             },
             {
                 name: "Save As",
-                type: "menuItem"
+                type: "menuItem",
+                action: "saveFile"
             },
             {
                 type: "separator"
             },
             {
                 name: "Page Setup",
-                type: "menuItem",
+                type: "menuItem"
             },
             {
                 name: "Print",
                 type: "menuItem",
-                shortcut: "Crtl+P"
+                shortcut: "Ctrl+P",
+                action: "printPage"
             },
             {
                 type: "separator"
@@ -39,6 +44,7 @@ export const menuBarItemsList = [
             {
                 name: "Exit",
                 type: "menuItem",
+                action: "exitNotepad"
             }
         ]
     },
@@ -48,7 +54,7 @@ export const menuBarItemsList = [
             {
                 name: "Undo",
                 type: "menuItem",
-                shortcut: "Crtl+Z"
+                shortcut: "Ctrl+Z"
             },
             {
                 type: "separator"
@@ -56,17 +62,17 @@ export const menuBarItemsList = [
             {
                 name: "Cut",
                 type: "menuItem",
-                shortcut: "Crtl+X"
+                shortcut: "Ctrl+X"
             },
             {
                 name: "Copy",
                 type: "menuItem",
-                shortcut: "Crtl+Z"
+                shortcut: "Ctrl+Z"
             },
             {
                 name: "Paste",
                 type: "menuItem",
-                shortcut: "Crtl+V"
+                shortcut: "Ctrl+V"
             },
             {
                 name: "Delete",
@@ -79,7 +85,7 @@ export const menuBarItemsList = [
             {
                 name: "Find",
                 type: "menuItem",
-                shortcut: "Crtl+F"
+                shortcut: "Ctrl+F"
             },
             {
                 name: "Find Next",
@@ -89,12 +95,12 @@ export const menuBarItemsList = [
             {
                 name: "Replace",
                 type: "menuItem",
-                shortcut: "Crtl+H"
+                shortcut: "Ctrl+H"
             },
             {
                 name: "Go To",
                 type: "menuItem",
-                shortcut: "Crtl+G"
+                shortcut: "Ctrl+G"
             },
             {
                 type: "separator"
@@ -102,7 +108,7 @@ export const menuBarItemsList = [
             {
                 name: "Select All",
                 type: "menuItem",
-                shortcut: "Crtl+A"
+                shortcut: "Ctrl+A"
             },
             {
                 name: "Time/Date",

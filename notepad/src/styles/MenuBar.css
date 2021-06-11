@@ -46,6 +46,7 @@
     padding-right: 1rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
+    color: black;
 }
 .menu-bar-sub-item {
     margin-left: 0.2rem;
@@ -57,3 +58,16 @@
     background-color: #316AC5;
     color: white;
 }
+  
+input[type="file"] {
+    position: absolute;
+    z-index: -1;
+    top: 10px;
+    left: 8px;
+    font-size: 17px;
+}
+
+#open-file-label {
+    width: 100%;
+}
+  

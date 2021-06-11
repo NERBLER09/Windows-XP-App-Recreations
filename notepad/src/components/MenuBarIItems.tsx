@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 
 import "../styles/MenuBar.css"
+import { createNewTextFile, readFromFile, saveFile } from "../ts/menuBarFunctions";
 
 export interface MenuBarItemProps {
     menuName: string,
@@ -20,7 +21,7 @@ const MenuBarItem: FC<MenuBarItemProps> = ({menuName, subMenuItems}) => {
                 {subMenuItems?.map((subMenuItem: any) => (
                     <>
                         {subMenuItem.type === "menuItem" ?
-                            <MenuBarSubItem subMenuName={subMenuItem.name}/> :
+                            <MenuBarSubItem subMenuName={subMenuItem.name} menuBarAction={subMenuItem.action} hideMenuBar={setShowSubMenu}/> :
                             <hr />
                         }
                     </>
@@ -31,17 +32,52 @@ const MenuBarItem: FC<MenuBarItemProps> = ({menuName, subMenuItems}) => {
     );
 }
 
+const checkSubMenuBarClicked = (menuBarItemAction: any) => {
+    switch (menuBarItemAction) {
+        case "createNew":
+            createNewTextFile()
+            break;
+        case "saveFile":
+            saveFile()
+
+            break
+        case "openFile":
+            readFromFile()
+            break
+
+        case "printPage":
+            window.print()
+
+            break
+
+        case "exitNotepad":
+            window.close()
+            break
+    
+        default:
+            console.log("Unknown action")
+    }
+}
+
 export interface MenuBarSubItemProps {
-    subMenuName: any
+    subMenuName: any,
+    menuBarAction: any,
+    hideMenuBar: Function
 }
  
-const MenuBarSubItem: FC<MenuBarSubItemProps> = ({subMenuName}) => {
+const MenuBarSubItem: FC<MenuBarSubItemProps> = ({subMenuName, menuBarAction, hideMenuBar}) => {
     return (
-        <div className="menu-bar-sub-item">
-            <div className="menu-sub-item-content">
-                <p>{subMenuName}</p>
-            </div>
-        </div>
+        <>
+                <div className="menu-bar-sub-item" onClick={() => {
+                    checkSubMenuBarClicked(menuBarAction)
+                    hideMenuBar(false)
+                    }}>
+                    <div className="menu-sub-item-content">
+                        <p>{subMenuName}</p>
+                    </div>
+                </div> 
+            
+        </>
     );
 }
   
