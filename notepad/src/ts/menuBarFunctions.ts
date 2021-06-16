@@ -2,7 +2,7 @@ var remote = window.require('electron').remote;
 var electronFs = remote.require('fs');
 const { dialog } = window.require('electron').remote
 
-const createNewTextFile = () => {
+const createNewTextFile = async() => {
     const textField: any = document.getElementById("text-input-area")
     textField.value = ""
 }

@@ -5,10 +5,15 @@ import { createNewTextFile, readFromFile, saveFile } from "../ts/menuBarFunction
 
 export interface MenuBarItemProps {
     menuName: string,
-    subMenuItems: any
+    subMenuItems: any,
+    setOpenMessageBox: Function,
+    setMessageBoxType: Function,
+    setMessageBoxHeaderText: Function,
+    setMessageBoxMainText: Function,
+    setYesFunction: Function
 }
  
-const MenuBarItem: FC<MenuBarItemProps> = ({menuName, subMenuItems}) => {
+const MenuBarItem: FC<MenuBarItemProps> = ({menuName, subMenuItems, setMessageBoxHeaderText, setMessageBoxMainText, setMessageBoxType, setOpenMessageBox, setYesFunction}) => {
     const [showSubMenu, setShowSubMenu] = useState(false)
 
     return (
@@ -21,7 +26,15 @@ const MenuBarItem: FC<MenuBarItemProps> = ({menuName, subMenuItems}) => {
                 {subMenuItems?.map((subMenuItem: any) => (
                     <>
                         {subMenuItem.type === "menuItem" ?
-                            <MenuBarSubItem subMenuName={subMenuItem.name} menuBarAction={subMenuItem.action} hideMenuBar={setShowSubMenu}/> :
+                            <MenuBarSubItem 
+                            subMenuName={subMenuItem.name} 
+                            menuBarAction={subMenuItem.action} 
+                            hideMenuBar={setShowSubMenu}
+                            setMessageBoxHeaderText={setMessageBoxHeaderText}
+                            setMessageBoxType={setMessageBoxType}
+                            setMessageBoxMainText={setMessageBoxMainText}
+                            setOpenMessageBox={setOpenMessageBox}
+                            setYesFunction={setYesFunction}/> :
                             <hr />
                         }
                     </>
@@ -32,40 +45,50 @@ const MenuBarItem: FC<MenuBarItemProps> = ({menuName, subMenuItems}) => {
     );
 }
 
-const checkSubMenuBarClicked = (menuBarItemAction: any) => {
-    switch (menuBarItemAction) {
-        case "createNew":
-            createNewTextFile()
-            break;
-        case "saveFile":
-            saveFile()
-
-            break
-        case "openFile":
-            readFromFile()
-            break
-
-        case "printPage":
-            window.print()
-
-            break
-
-        case "exitNotepad":
-            window.close()
-            break
-    
-        default:
-            console.log("Unknown action")
-    }
-}
 
 export interface MenuBarSubItemProps {
     subMenuName: any,
     menuBarAction: any,
-    hideMenuBar: Function
+    hideMenuBar: Function,
+    setOpenMessageBox: Function,
+    setMessageBoxType: Function,
+    setMessageBoxHeaderText: Function,
+    setMessageBoxMainText: Function,
+    setYesFunction: Function
 }
  
-const MenuBarSubItem: FC<MenuBarSubItemProps> = ({subMenuName, menuBarAction, hideMenuBar}) => {
+const MenuBarSubItem: FC<MenuBarSubItemProps> = ({subMenuName, menuBarAction, hideMenuBar, setMessageBoxHeaderText, setMessageBoxMainText, setMessageBoxType, setOpenMessageBox, setYesFunction}) => {
+    const checkSubMenuBarClicked = (menuBarItemAction: any) => {
+        switch (menuBarItemAction) {
+            case "createNew":
+                createNewTextFile()
+                break;
+            case "saveFile":
+                saveFile()
+    
+                break
+            case "openFile":
+                readFromFile()
+                break
+    
+            case "printPage":
+                window.print()
+    
+                break
+    
+            case "exitNotepad":
+                window.close()
+                break
+        
+            default:
+                // console.log("Unknown action")
+                setOpenMessageBox(true)
+                setMessageBoxType("error")
+                setMessageBoxHeaderText("Unknown Action!")
+                setMessageBoxMainText("The action you try to run is not currently implemented")
+        }
+    }
+
     return (
         <>
                 <div className="menu-bar-sub-item" onClick={() => {
@@ -76,7 +99,6 @@ const MenuBarSubItem: FC<MenuBarSubItemProps> = ({subMenuName, menuBarAction, hi
                         <p>{subMenuName}</p>
                     </div>
                 </div> 
-            
         </>
     );
 }

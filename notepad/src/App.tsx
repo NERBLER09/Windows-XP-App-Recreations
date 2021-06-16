@@ -1,9 +1,16 @@
-// import favicon from ""
-
+import { useState } from "react";
 import MenuBar from "./components/MenuBar";
+import MessageBox from "./components/MessageBox";
 import TextInput from "./components/TextInput";
+import { saveWork } from "./ts/messageBoxYesFunctions";
 
 function App() {
+  const [openMessageBox, setOpenMessageBox] = useState(false)
+  const [messageBoxType, setMessageBoxType] = useState("")
+  const [messageBoxHeaderText, setMessageBoxHeaderText] = useState("")
+  const [messageBoxMainText, setMessageBoxMainText] = useState("")
+  const [yesFunction, setYesFunction]: any = useState()
+
   return (
     <div className="notepad window">
       <div className="title-bar" id="window-title-bar">
@@ -17,8 +24,20 @@ function App() {
       </div>
 
       <div className="main">
-        <MenuBar/>
+        <MenuBar 
+        setMessageBoxHeaderText={setMessageBoxHeaderText}
+        setMessageBoxType={setMessageBoxType}
+        setMessageBoxMainText={setMessageBoxMainText}
+        setOpenMessageBox={setOpenMessageBox}
+        setYesFunction={setYesFunction}/>
         <TextInput/>
+
+        {openMessageBox && <MessageBox
+        messageBoxHeaderText={messageBoxHeaderText}
+        messageBoxMainText={messageBoxMainText}
+        setOpenMessageBox={setOpenMessageBox}
+        messageBoxType={messageBoxType}
+        yesFunction={yesFunction}/> }
       </div>
     </div>
   );

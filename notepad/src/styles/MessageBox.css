@@ -1,0 +1,27 @@
+.message-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.message-box-content {
+    display: flex; 
+    margin: 0.5rem;
+
+    align-items: center;
+}
+.message-box-controls {
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+.message-box-icon {
+    width: 36px;
+    height: 36px;
+}
+.message-box-text {
+    margin-left: 1rem;
+}
