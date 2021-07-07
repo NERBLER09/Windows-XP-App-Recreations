@@ -14,6 +14,7 @@ Clone the repo and `cd ` into it. See `Folders` to see what each folder contains
 - `oobe` Contains a recreation of the Windows XP OOBE
 - `ms-paint` Contains a recreation of the Windows XP Paint
 - `notepad` Contains a recreation of the Windows XP Notepad
+- `calculator` Contains a recreation of the Windows XP Calculator
 
 ## Contributing 
 Generally open an issue (or comment on an issue if there's one already) before starting work on a PR.
