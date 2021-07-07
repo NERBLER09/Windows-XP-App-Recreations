@@ -1,8 +1,8 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 
 function createWindow () {
   // Create the browser window.
-  const win = new BrowserWindow({
+  let win = new BrowserWindow({
     width: 800,
     height: 610,
     minHeight: 610,
@@ -17,6 +17,11 @@ function createWindow () {
 
   // Open the DevTools.
   win.webContents.openDevTools()
+
+  win.on("close", (event) => {
+    event.preventDefault()
+    win.webContents.send("displayCloseMessageBox")
+  })
 }
 
 // This method will be called when Electron has finished

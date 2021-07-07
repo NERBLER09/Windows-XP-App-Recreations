@@ -1,8 +1,11 @@
+import { useEffect } from "react";
 import { useState } from "react";
+import CloseMessageBox from "./components/CloseMessageBox";
 import MenuBar from "./components/MenuBar";
 import MessageBox from "./components/MessageBox";
 import TextInput from "./components/TextInput";
-import { saveWork } from "./ts/messageBoxYesFunctions";
+
+const {ipcRenderer} = window.require("electron")
 
 function App() {
   const [openMessageBox, setOpenMessageBox] = useState(false)
@@ -10,6 +13,12 @@ function App() {
   const [messageBoxHeaderText, setMessageBoxHeaderText] = useState("")
   const [messageBoxMainText, setMessageBoxMainText] = useState("")
   const [yesFunction, setYesFunction]: any = useState()
+
+  const [showCloseMessageBox, setShowCloseMessageBox] = useState(false)
+
+  ipcRenderer.on("displayCloseMessageBox", () => {
+    setShowCloseMessageBox(true)
+  })
 
   return (
     <div className="notepad window">
@@ -38,6 +47,8 @@ function App() {
         setOpenMessageBox={setOpenMessageBox}
         messageBoxType={messageBoxType}
         yesFunction={yesFunction}/> }
+
+        {showCloseMessageBox && <CloseMessageBox hideMessageBox={setShowCloseMessageBox}/>}
       </div>
     </div>
   );
