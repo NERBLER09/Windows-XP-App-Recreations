@@ -4,9 +4,87 @@
     <meta charset="UTF-8">
     <title>Hello World!</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="styles/MenuBar.css">
+    <link rel="stylesheet" href="https://unpkg.com/xp.css" />
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <div class="notepad window">
+      <div class="title-bar" id="window-title-bar">
+        <img src="favicon.ico" alt="" class="title-bar-favicon"/>
+        <div class="title-bar-text">Windows XP Calculator Recreation</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" title="Minimize"></button>
+          <button aria-label="Maximize" title="Maximize" id="maximizeButton"></button>
+          <button aria-label="Close" title="Close"></button>
+        </div>
+      </div>
+
+      <div class="main">
+        <div id="menu-bar">
+          <div class="menu-bar-item">
+            <div class="menu-bar-item-content">
+              <p>Edit</p>
+            </div>
+
+            <div id="sub-menu">
+              <div class="menu-bar-sub-item">
+                <div class="menu-sub-item-content">
+                  <p>Copy</p>
+                </div>
+              </div>
+              <div class="menu-bar-sub-item">
+                <div class="menu-sub-item-content">
+                  <p>Paste</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-bar-item">
+            <div class="menu-bar-item-content">
+              <p>View</p>
+            </div>
+
+            <div id="sub-menu">
+              <div class="menu-bar-sub-item">
+                <div class="menu-sub-item-content">
+                  <p>Standard</p>
+                </div>
+              </div>
+              <div class="menu-bar-sub-item">
+                <div class="menu-sub-item-content">
+                  <p>Scientific</p>
+                </div>
+              </div>
+              <hr>
+              <div class="menu-bar-sub-item">
+                <div class="menu-sub-item-content">
+                  <p>Digit Grouping</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-bar-item">
+            <div class="menu-bar-item-content">
+              <p>Help</p>
+            </div>
+
+            <div id="sub-menu">
+              <div class="menu-bar-sub-item">
+                <div class="menu-sub-item-content">
+                  <p>Help Topics</p>
+                </div>
+              </div>
+              <div class="menu-bar-sub-item">
+                <div class="menu-sub-item-content">
+                  <p>About Calculator</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
   </body>
 </html>
